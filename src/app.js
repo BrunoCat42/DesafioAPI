@@ -1,5 +1,5 @@
 const express = require('express');
-const config = require('./config')
+const config = require('../config/config.js')
 
 const app = express();
 
@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log(`🔥 Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
