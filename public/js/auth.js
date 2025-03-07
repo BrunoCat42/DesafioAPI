@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:4000"; // ✅ Alteração para a URL correta da API
+const API_URL = "http://localhost:4000"; // Alteração para a URL correta da API
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,7 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
             if (response.ok) {
                 localStorage.setItem("token", data.token);
+                localStorage.setItem("isAdmin", data.isAdmin);
                 window.location.href = "dashboard.html";
+
+                if (data.isAdmin) {
+                    window.location.href = "admin.html"; // Redireciona admin
+                } else {
+                    window.location.href = "dashboard.html"; // Redireciona usuário normal
+                }
             } else {
                 alert(data.message);
             }

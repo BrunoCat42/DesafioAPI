@@ -37,7 +37,7 @@ const loginUser = async (req, res) => {
             console.log("Tipo de SECRET_KEY:", typeof SECRET_KEY);
 
             const token = jwt.sign(userToken, SECRET_KEY)
-            res.json({message: "Login bem sucedido", token})
+            res.json({message: "Login bem sucedido", token, isAdmin: user.isAdmin})
         })
     } catch (error) {
         console.error(' Erro no login:', error.message);

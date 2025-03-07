@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Painel do Administrador</h1>
+
+    <h2>Adicionar Nova Atividade</h2>
+    <form id="activity-form">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required>
+        
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" required>
+        
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+        
+        <label for="local">Local:</label>
+        <input type="text" id="local" required>
+        
+        <label for="maxParticipantes">Máx. Participantes:</label>
+        <input type="number" id="maxParticipantes" required>
+
+        <button type="submit">Criar Atividade</button>
+    </form>
+
+    <h2>Lista de Atividades</h2>
+    <ul id="activities-list"></ul>
+
+    <button id="logout">Sair</button>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

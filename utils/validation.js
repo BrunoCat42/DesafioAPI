@@ -18,11 +18,13 @@ const isValidActivity = (titulo, descricao, data, local, maxParticipantes) => {
         return false;
     }
 
-    if (typeof maxParticipantes !== 'number' || maxParticipantes <= 0) {
+    const numMaxParticipantes = Number(maxParticipantes);
+
+    if (isNaN(numMaxParticipantes) || numMaxParticipantes <= 0) {
         return false;
     }
 
-    if (new Date(data) < new Date()) {
+    if (isNaN(Date.parse(data)) || new Date(data) < new Date()) {
         return false; // A data da atividade deve ser no futuro
     }
 
