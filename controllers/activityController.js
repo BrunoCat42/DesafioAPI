@@ -78,6 +78,7 @@ const cancelEnrollment = (req, res) => {
     });
 };
 
+//Procurar atividades do usuário
 const getUserEnrolledActivities = (req, res) => {
     const userId = req.user.id;
 

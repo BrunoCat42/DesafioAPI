@@ -3,13 +3,14 @@ const { comparePassword } = require('../utils/passwordVerify');
 const {SECRET_KEY} = require('../config/config');
 const {userDB} = require('../database/userData')
 
+//Função para usuário fazer login
 const loginUser = async (req, res) => {
     try {
         console.log("Tentativa de login:", req.body); // Depuração
 
         const { email, password } = req.body;
 
-        // 🔹 Verifica se o usuário existe
+        // Verifica se o usuário existe
         userDB.get(email, async (err, user)=>{
             if(err) {
                 return res.status(500).json({message: "Erro ao verificar o usuário"})

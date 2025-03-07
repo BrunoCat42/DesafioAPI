@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const {userDB} = require('../database/userData');
 
-// 🔹 Middleware para verificar se o usuário está autenticado
+// Middleware para verificar se o usuário está autenticado
 const verifyToken = (req, res, next) => {
     const token = req.header('Authorization');
 
@@ -20,7 +20,7 @@ const verifyToken = (req, res, next) => {
     });
 };
 
-// 🔹 Middleware para verificar se o usuário é um administrador
+// Middleware para verificar se o usuário é um administrador
 const isAdmin = (req, res, next) => {
     const userEmail = req.user.email;
 

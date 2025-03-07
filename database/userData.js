@@ -58,7 +58,7 @@ class Database{
         });
     }
     
-    
+    //Método para deletar do banco de dados
     del(key, callback) {
         if (!this.db) {
             return callback(new Error('O banco de dados não está aberto'))
